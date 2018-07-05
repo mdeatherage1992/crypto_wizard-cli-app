@@ -8,10 +8,10 @@ def call
 end
 
 def list_currencies
-@listings = CryptoWizard::Listings.listing
-@listings.each.with_index(1) do |coin, i|
-  puts "#{i}. NAME: #{coin.name} - PRICE: $#{coin.price} - MARKET CAP: #{coin.market_cap} - SUPPLY: #{coin.supply}"
-end
+  @listings = CryptoWizard::Listings.listing
+  @listings.each.with_index(1) do |coin, i|
+    puts "#{i}. NAME: #{coin.name} - PRICE: $#{coin.price} - MARKET CAP: #{coin.market_cap} - SUPPLY: #{coin.supply}"
+  end
 end
 
 def menu

@@ -12,15 +12,15 @@ class CryptoWizard::Scraper
   end
 
   def self.giri_scrape(scraped_coin)
-  coin = self.new
-  coin.name = scraped_coin.search("h1.details-panel-item--name").text.gsub("\n","")
-  market_cap_setter = scraped_coin.search("div.coin-summary-item-detail")[0]
-  coin.market_cap = market_cap_setter.search("span span").text.gsub("\n","").split("USD")[0]
-  circulating_supply = scraped_coin.search("div.coin-summary-item-detail")[2]
-  coin.supply = circulating_supply.search("span").text.gsub("\n","")
-  price_setter = coin.market_cap.to_i.round(4)/coin.supply.to_i.round(4)
-  coin.price = (price_setter * 1000).round.to_s
-  coin
+    coin = self.new
+    coin.name = scraped_coin.search("h1.details-panel-item--name").text.gsub("\n","")
+    market_cap_setter = scraped_coin.search("div.coin-summary-item-detail")[0]
+    coin.market_cap = market_cap_setter.search("span span").text.gsub("\n","").split("USD")[0]
+    circulating_supply = scraped_coin.search("div.coin-summary-item-detail")[2]
+    coin.supply = circulating_supply.search("span").text.gsub("\n","")
+    price_setter = coin.market_cap.to_i.round(4)/coin.supply.to_i.round(4)
+    coin.price = (price_setter * 1000).round.to_s
+    coin
   end
 
   def self.create_neo
