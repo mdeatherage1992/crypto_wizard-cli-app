@@ -18,7 +18,7 @@ def menu
   CryptoWizard::Menu.menu
 end
 
-def goodbye
+def self.goodbye
   puts "Have a good day"
 end
 

@@ -10,22 +10,21 @@ def self.menu
     input = gets.strip.downcase
     if input.to_i > 0 && input.to_i < 5
       puts @listings[input.to_i - 1].name
-      puts "PRICE:"
+      puts "PRICE($):"
       puts @listings[input.to_i - 1].price
       puts "SUPPLY:"
       puts @listings[input.to_i - 1].supply
-      puts "MARKET CAP:"
+      puts "MARKET CAP($):"
       puts @listings[input.to_i - 1].market_cap
     elsif input == "list"
       list_currencies
     elsif input == "exit"
-      goodbye
+      CryptoWizard::CLI.goodbye
     else
       puts "not sure what you mean, enter list for listings, or exit to exit"
     end
   end
 end
-
 
 
 
