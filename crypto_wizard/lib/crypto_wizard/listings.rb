@@ -1,4 +1,3 @@
-require 'pry'
 class CryptoWizard::Listings
   attr_accessor :name,:price,:market_cap,:supply
 
